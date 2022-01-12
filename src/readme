@@ -1,1 +1,13 @@
-temp
+# SNPs                                                                                                                                                                                            
+vcftools --gzvcf $vcf --out ${outprefix}_SNPs --remove-filtered-all --keep $keeplist --remove-indels --max-missing-count 10 --freq &                                                              
+vcftools --gzvcf $vcf --out ${outprefix}_SNPs --remove-filtered-all --keep $keeplist --remove-indels --max-missing-count 10 --extract-FORMAT-info GT &                                            
+                                                                                                                                                                                                  
+# indels                                                                                                                                                                                          
+vcftools --gzvcf $vcf --out ${outprefix}_indels --remove-filtered-all --keep $keeplist --keep-only-indels --max-missing-count 10 --freq &                                                         
+vcftools --gzvcf $vcf --out ${outprefix}_indels --remove-filtered-all --keep $keeplist --keep-only-indels --max-missing-count 10 --extract-FORMAT-info GT                                         
+
+# bam2wig 10 min/bam
+# bam flagstat @ 4 1min/bam
+#
+#
+# Plink 1.9 in this path:/media/Rome/wenyan/src/plink
