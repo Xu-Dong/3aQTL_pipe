@@ -13,24 +13,24 @@ aQTL pipeline applied on population scale genotype and transcriptomic data
 
 
 	## step 2
-	run_bam2wig sample_list.txt
-	run_generate_3utr_annotation
-	run_flagstat_bam sample_list.txt
-	run_generate_configure_dapars2
+	> run_bam2wig sample_list.txt
+	> run_generate_3utr_annotation
+	> run_flagstat_bam sample_list.txt
+	> run_generate_configure_dapars2
 
 	## step 3
-	run_dapars2 Dapars2_GEUV_all_samples.joint_configure.txt
-	run_merge_dapars2_res
+	> run_dapars2 Dapars2_GEUV_all_samples.joint_configure.txt
+	> run_merge_dapars2_res
 	
 	## step 4
-	run_genotype_pca
-	run_peer
-	run_prepare_input4matrixEQTL
-	run_prepare_gene_and_snp_location
+	> run_genotype_pca
+	> run_peer
+	> run_prepare_input4matrixEQTL
+	> run_prepare_gene_and_snp_location
 
 	## step 5
-	run_matrix_eqtl
+	> run_matrix_eqtl
 
 	## step 6
-	run_susieR
+	> run_susieR
 
