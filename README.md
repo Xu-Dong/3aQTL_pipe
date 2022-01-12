@@ -11,7 +11,8 @@ aQTL pipeline applied on population scale genotype and transcriptomic data
 * Genotype data of the 445 individuals, VCF4.1 files, downloaded from Array-Express (https://www.ebi.ac.uk/arrayexpress/experiments/E-GEUV-1/)
 * Refseq gene annotation file (hg19_refseq_whole_gene.bed) and refseq transcript id map to gene symbol (hg19_refseq_id_to_symbol.txt) both files can be downloaded from UCSC table browser.
 
-main(){
+main()
+{
 	> step 2
 	run_bam2wig sample_list.txt
 	run_generate_3utr_annotation
