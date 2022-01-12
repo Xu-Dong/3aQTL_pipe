@@ -13,7 +13,7 @@ aQTL pipeline applied on population scale genotype and transcriptomic data
 
 
 '''
-main(){
+
 	# step 2
 	run_bam2wig sample_list.txt
 	run_generate_3utr_annotation
@@ -35,5 +35,5 @@ main(){
 
 	# step 6
 	run_susieR
-}
+
 '''
