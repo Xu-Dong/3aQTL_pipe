@@ -29,11 +29,124 @@ main(){
 	run_matrix_eqtl
 
 	# step 6
-	run_susieR
+	run_prepare_data_for_susieR_01
+	run_prepare_data_for_susieR_02
+	run_susieR CEU
+	run_susieR FIN
+	run_susieR GBR
+	run_susieR TSI
+	run_susieR YRI
 }
 
 
 # -- functions -- list order: bottom to up ---
+
+# run susieR
+function run_susieR(){
+	src=/media/Rome/zouxd/Projects/2021-12-05-3aQTL-STAR-Protocol-Project/src
+	susie_DIR=/media/Rome/zouxd/Projects/2021-12-05-3aQTL-STAR-Protocol-Project/output/susieR_analysis
+	curr_dir=`pwd`
+	POP=$1
+	module load languages/R-3.6.3
+	date
+	cd ${susie_DIR}/$POP
+	for gene in `cat ${susie_DIR}/input/${POP}.aGenes.loc_1Mb.txt|cut -f1`
+	do
+		if [ -d $gene ]
+		then
+			cd $gene
+			if [ -f "3aQTL.vcf" -a -f "expr.phen" ]
+			then
+				Rscript ${src}/SuSiE_GTEx.r
+			else
+				continue
+			fi
+		else
+			continue
+		fi
+		cd ${susie_DIR}/$POP
+	done
+
+	date
+
+}
+
+# prepare step 2: prepare 3aQTL.vcf and expr.phen for each selected aGene
+function run_prepare_data_for_susieR_02(){
+	src=/media/Rome/zouxd/Projects/2021-12-05-3aQTL-STAR-Protocol-Project/src
+	PDUI_DIR=/media/Rome/zouxd/Projects/2021-12-05-3aQTL-STAR-Protocol-Project/output/matrix-eqtl/input
+	susie_DIR=/media/Rome/zouxd/Projects/2021-12-05-3aQTL-STAR-Protocol-Project/output/susieR_analysis
+	curr_dir=`pwd`
+	POPs=(CEU FIN GBR TSI YRI)
+
+	# mkdir
+#	cd $susie_DIR
+#	mkdir -p CEU
+#	mkdir -p FIN
+#	mkdir -p GBR
+#      	mkdir -p TSI
+#	mkdir -p YRI
+#
+#	for (( i = 0 ; i < ${#POPs[@]} ; i++ ))
+#	do
+#		cd ${susie_DIR}/${POPs[$i]}
+#		for gene in `cat ${susie_DIR}/input/${POPs[$i]}.aGenes.loc_1Mb.txt|cut -f1`
+#		do
+#			mkdir -p $gene
+#			cd $gene
+#			cat ${PDUI_DIR}/PDUI_mat.${POPs[$i]}.txt | awk -v aGENE=$gene -F"\t" 'BEGIN{OFS="\t"} {if (NR==1) { for (i=2;i<NF;++i) SAMPLES[i]=$i} if ($1==aGENE){ for(i=2;i<NF;++i) print SAMPLES[i],SAMPLES[i],$i}}' > expr.phen &
+#			wait
+#			cd ${susie_DIR}/${POPs[$i]}
+#		done
+#	done
+
+	for (( i = 0 ; i < ${#POPs[@]} ; i++ ))
+	do
+		cd ${susie_DIR}/${POPs[$i]}
+		while read line
+		do
+			gene=`echo $line|awk '{print $1}'`
+			loc=`echo $line|awk '{print $2}'`
+			cd $gene
+			CHR=${loc%:*}
+			COORD=${loc#*:}
+			S=${COORD%-*}
+			E=${COORD#*-}
+			echo -e "$CHR\t$S\t$E" > gene_loc.bed
+			cat ${susie_DIR}/input/Header.${POPs[$i]} > 3aQTL.vcf 
+			bedtools intersect -a ${susie_DIR}/input/Genotype_mat.${POPs[$i]}.bed -b gene_loc.bed -wa |cut -f4- >> 3aQTL.vcf &
+			wait
+			rm gene_loc.bed
+			cd ${susie_DIR}/${POPs[$i]}
+
+		done < ${susie_DIR}/input/${POPs[$i]}.aGenes.loc_1Mb.txt
+
+	done
+}
+
+# prepare step 1: prepare aGenes, locations, genotype formats
+function run_prepare_data_for_susieR_01(){
+	src=/media/Rome/zouxd/Projects/2021-12-05-3aQTL-STAR-Protocol-Project/src
+	GT=/media/Rome/zouxd/Projects/2021-12-05-3aQTL-STAR-Protocol-Project/output/matrix-eqtl/input
+	susie_IN=/media/Rome/zouxd/Projects/2021-12-05-3aQTL-STAR-Protocol-Project/output/susieR_analysis/input
+
+	module load basic/anaconda2
+	# prepare the extended region of 3'UTR of each selected aGene,five txt files will be generated (*.aGenes.loc_1Mb.txt, * could be one of CEU/FIN/GBR/TSI/YRI)
+	bash ${src}/submit_prepare_susieR_uniqGene_loc.sh &
+	wait
+	# transform the genotype 012 format data into bed file
+	python ${src}/genotype_2_bed.py ${GT}/Genotype_mat.CEU.txt ${susie_IN}/Genotype_mat.CEU.bed ${susie_IN}/Header.CEU &
+	wait
+	python ${src}/genotype_2_bed.py ${GT}/Genotype_mat.FIN.txt ${susie_IN}/Genotype_mat.FIN.bed ${susie_IN}/Header.FIN &
+	wait
+	python ${src}/genotype_2_bed.py ${GT}/Genotype_mat.GBR.txt ${susie_IN}/Genotype_mat.GBR.bed ${susie_IN}/Header.GBR &
+	wait
+	python ${src}/genotype_2_bed.py ${GT}/Genotype_mat.TSI.txt ${susie_IN}/Genotype_mat.TSI.bed ${susie_IN}/Header.TSI &
+	wait
+	python ${src}/genotype_2_bed.py ${GT}/Genotype_mat.YRI.txt ${susie_IN}/Genotype_mat.YRI.bed ${susie_IN}/Header.YRI &
+	wait
+
+}
 
 function run_matrix_eqtl(){
 	POPs=(CEU FIN GBR TSI YRI)
