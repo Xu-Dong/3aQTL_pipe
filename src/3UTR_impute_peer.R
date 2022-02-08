@@ -13,7 +13,7 @@ library(magrittr)
 library(peer)
 library(impute)
 
-setwd("/media/Rome/zouxd/Projects/2021-12-05-3aQTL-STAR-Protocol-Project/output")
+setwd("./output") # currently directory is the basic path of this project
 
 # --------------- load known covariates -----------------## --------------------------------
 # genotype pca
