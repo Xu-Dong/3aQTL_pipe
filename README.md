@@ -12,7 +12,7 @@ aQTL pipeline applied on population scale genotype and transcriptomic data
 * Refseq gene annotation file (hg19_refseq_whole_gene.bed) and refseq transcript id map to gene symbol (hg19_refseq_id_to_symbol.txt) both files can be downloaded from UCSC table browser.
 
 
-'''
+···
 
 	# step 2
 	run_bam2wig sample_list.txt
@@ -36,4 +36,4 @@ aQTL pipeline applied on population scale genotype and transcriptomic data
 	# step 6
 	run_susieR
 
-'''
+···
