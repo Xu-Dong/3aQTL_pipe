@@ -2,7 +2,7 @@
 
 args <- commandArgs(trailingOnly=TRUE)
 POP <- args[1] #CEU/FIN/GBR/TSI/YRI
-basedir <- "/media/Rome/zouxd/Projects/2021-12-05-3aQTL-STAR-Protocol-Project/output/susieR_analysis"
+basedir <- "/home/username/Project_XXX/output/susieR_analysis"
 
 setwd(basedir)
 
