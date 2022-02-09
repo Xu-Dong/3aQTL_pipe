@@ -13,12 +13,12 @@ aQTL pipeline applied on population scale genotype and transcriptomic data
 * Refseq gene annotation file (hg19_refseq_whole_gene.bed) and refseq transcript id map to gene symbol (hg19_refseq_id_to_symbol.txt) both files can be downloaded from UCSC table browser.
 
 ## Make a workspace (root directory) for this project
-***NOTE*** We use pseudo-path in all the codes in src/. Users apply the codes should modify the pathes to their own. We recommend making a root directory for
+***NOTE:*** We use pseudo-path in all the codes in src/. Users apply the codes should modify the pathes to their own. We recommend making a root directory for
 testing the whole project.
 * Use the command below to build a workspace
 ```
-> cd $HOME
-> mkdir Project_XXX
-> cd Project_XXX
+> cd $HOME # change to home directory
+> mkdir Project_XXX # change XXX to user defined project name
+> cd Project_XXX # change path to the built root directory
 > mkdir input output src matrix-eqtl susieR_analysis
 ```
