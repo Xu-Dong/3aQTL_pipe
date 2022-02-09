@@ -13,27 +13,12 @@ aQTL pipeline applied on population scale genotype and transcriptomic data
 * Refseq gene annotation file (hg19_refseq_whole_gene.bed) and refseq transcript id map to gene symbol (hg19_refseq_id_to_symbol.txt) both files can be downloaded from UCSC table browser.
 
 ## Make a workspace (root directory) for this project
-
+***NOTE*** We use pseudo-path in all the codes in src/. Users apply the codes should modify the pathes to their own. We recommend making a root directory for
+testing the whole project.
+* Use the command below to build a workspace
 ```
-# step 2
-run_bam2wig sample_list.txt
-run_generate_3utr_annotation
-run_flagstat_bam sample_list.txt
-run_generate_configure_dapars2
-
-# step 3
-run_dapars2 Dapars2_GEUV_all_samples.joint_configure.txt
-run_merge_dapars2_res
-	
-# step 4
-run_genotype_pca
-run_peer
-run_prepare_input4matrixEQTL
-run_prepare_gene_and_snp_location
-
-# step 5
-run_matrix_eqtl
-
-# step 6
-run_susieR
+> cd $HOME
+> mkdir Project_XXX
+> cd Project_XXX
+> mkdir input output src matrix-eqtl susieR_analysis
 ```
