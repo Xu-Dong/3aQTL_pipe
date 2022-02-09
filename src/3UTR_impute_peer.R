@@ -13,7 +13,7 @@ library(magrittr)
 library(peer)
 library(impute)
 
-setwd("./output") # currently directory is the basic path of this project
+setwd("/home/username/Project_XXX/output") # change this path to user defined project workspace
 
 # --------------- load known covariates -----------------## --------------------------------
 # genotype pca
@@ -35,10 +35,10 @@ names(gt_pca.gbr) <- c("subject_id","PC_1","PC_2","PC_3","PC_4","PC_5")
 names(gt_pca.tsi) <- c("subject_id","PC_1","PC_2","PC_3","PC_4","PC_5")
 names(gt_pca.yri) <- c("subject_id","PC_1","PC_2","PC_3","PC_4","PC_5")
 
-# subject population info
+# subject population info, can be download in data/ of the current repository
 # current format is:
 # subject_id    population(CEU/FIN/GBR/TSI/YRI) sex(female/male)
-sub2pops <- read.table("../input/subject_population_sex.445.txt",header=T, sep="\t",stringsAsFactors=F)
+sub2pops <- read.table("/home/username/Project_XXX/input/subject_population_sex.445.txt",header=T, sep="\t",stringsAsFactors=F)
 sub2pops$sex[sub2pops$sex=="male"] <- 1
 sub2pops$sex[sub2pops$sex=="female"] <- 0
 known_cov.ceu <- sub2pops %>% dplyr::filter(population == "CEU") %>% select(subject_id,sex)
