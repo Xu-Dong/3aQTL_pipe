@@ -8,7 +8,7 @@ library(dplyr)
 library(magrittr)
 
 # -- Main
-setwd("/media/Rome/zouxd/Projects/2021-12-05-3aQTL-STAR-Protocol-Project/output")
+setwd("/home/username/Project_XXX/output")
 # --- load input data
 # imputed PUDI matrix, sex info, PCA of genotype
 pdui_mat <- read.table("Dapars2_geuv_PDUIs.imputed.txt",header=T,sep="\t",stringsAsFactors=F)
