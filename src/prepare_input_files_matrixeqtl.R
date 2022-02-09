@@ -8,7 +8,7 @@ library(magrittr)
 library(data.table)
 
 # -- Main
-setwd("/media/Rome/zouxd/Projects/2021-12-05-3aQTL-STAR-Protocol-Project/output")
+setwd("/home/username/Project_XXX/output")
 # --- load input data
 # imputed PUDI matrix, sex info, PCA of genotype
 pdui_mat.ceu <- readRDS("CEU.pdui_mat.imputed.RDS")
@@ -39,11 +39,11 @@ pdui_mat.gbr %<>% dplyr::select("id",all_of(pop_sex.gbr$subject_id))
 pdui_mat.tsi %<>% dplyr::select("id",all_of(pop_sex.tsi$subject_id))
 pdui_mat.yri %<>% dplyr::select("id",all_of(pop_sex.yri$subject_id))
 
-write.table(pdui_mat.ceu,file="./matrix-eqtl/input2/PDUI_mat.CEU.txt",quote=F,sep="\t",row.names=F,col.names=T)
-write.table(pdui_mat.fin,file="./matrix-eqtl/input2/PDUI_mat.FIN.txt",quote=F,sep="\t",row.names=F,col.names=T)
-write.table(pdui_mat.gbr,file="./matrix-eqtl/input2/PDUI_mat.GBR.txt",quote=F,sep="\t",row.names=F,col.names=T)
-write.table(pdui_mat.tsi,file="./matrix-eqtl/input2/PDUI_mat.TSI.txt",quote=F,sep="\t",row.names=F,col.names=T)
-write.table(pdui_mat.yri,file="./matrix-eqtl/input2/PDUI_mat.YRI.txt",quote=F,sep="\t",row.names=F,col.names=T)
+write.table(pdui_mat.ceu,file="./matrix-eqtl/input/PDUI_mat.CEU.txt",quote=F,sep="\t",row.names=F,col.names=T)
+write.table(pdui_mat.fin,file="./matrix-eqtl/input/PDUI_mat.FIN.txt",quote=F,sep="\t",row.names=F,col.names=T)
+write.table(pdui_mat.gbr,file="./matrix-eqtl/input/PDUI_mat.GBR.txt",quote=F,sep="\t",row.names=F,col.names=T)
+write.table(pdui_mat.tsi,file="./matrix-eqtl/input/PDUI_mat.TSI.txt",quote=F,sep="\t",row.names=F,col.names=T)
+write.table(pdui_mat.yri,file="./matrix-eqtl/input/PDUI_mat.YRI.txt",quote=F,sep="\t",row.names=F,col.names=T)
 
 # --- load covariates
 covariates.ceu <- read.table("ceu.pdui.peer.covariates.txt",header=T,sep="\t",stringsAsFactors=F)
