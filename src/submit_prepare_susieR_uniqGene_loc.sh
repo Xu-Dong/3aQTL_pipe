@@ -4,8 +4,8 @@
 
 
 date
-base_in=/media/Rome/zouxd/Projects/2021-12-05-3aQTL-STAR-Protocol-Project/output/matrix-eqtl
-base_out=/media/Rome/zouxd/Projects/2021-12-05-3aQTL-STAR-Protocol-Project/output/susieR_analysis
+base_in=/home/username/Project_XXX/matrix-eqtl
+base_out=/home/username/Project_XXX/susieR_analysis
 POPs=(CEU FIN GBR TSI YRI)
 for (( i = 0; i < ${#POPs[@]}; i++ ))
 do
