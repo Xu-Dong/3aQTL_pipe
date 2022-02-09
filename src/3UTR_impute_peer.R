@@ -116,10 +116,23 @@ for(i in 1:5){
 
 	PEER_setCovariates(model, covs_se)
 	dim(PEER_getCovariates(model))
-	#impute missing values in 3'UTR expression
+	# impute missing values in 3'UTR expression
 	mat.ds <- pdui_mat.list[[i]]
 	mat_impute <- impute.knn(mat.ds)
+	# save imputed PDUI matrix without quantile normalization
 	saveRDS(as.matrix(mat_impute$data),file=paste0(loop.pop[i],".pdui_mat.imputed.RDS"))
+	
+	# save imputed PDUI matrix after quantile normalization
+	df_w <- as.data.frame(mat_impute$data)
+	for(gene iin 1:nrow(df_w)){
+		mat = df_w[gene,]
+		mat = apply(mat,1,rank,ties.method = "average")
+		mat = qnorm(mat / (ncol(df_w)+1))
+		df_w[gene,] = mat
+	}
+	
+	write.table(cbind(rownames(mat_impute$data),df_w),file=paste0(loop.pop[i],".pdui_mat.imputed_qnorm.txt",row.names=F,col.names=T,quote=F,sep="\t"))
+	
 	PEER_setPhenoMean(model, t(as.matrix(mat_impute$data)))
 
 	dim(PEER_getPhenoMean(model))
