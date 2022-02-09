@@ -5,8 +5,9 @@
 
 echo "Start ..."
 date
-bamDir=${HOME}/Project/input/E-GEUV-1-RNA
-selected_samples=${HOME}/Project/input/sample_list.txt
+# change bamDir to user defined location (where the downloaded bam files exist)
+bamDir=${HOME}/Project_XXX/input/E-GEUV-1-RNA
+selected_samples=${HOME}/Project_XXX/input/sample_list.txt
 
 for sample in `cat $selected_samples|cut -f1`
 do
