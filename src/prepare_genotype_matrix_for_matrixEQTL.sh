@@ -1,5 +1,5 @@
 #!/bin/bash
-dir=${HOME}/Project/input/E-GEUV-1-Genotype
+dir=${HOME}/Project_XXX/input/E-GEUV-1-Genotype
 chrs=(chr1 chr2 chr3 chr4 chr5 chr6 chr7 chr8 chr9 chr10 chr11 chr12 chr13 chr14 chr15 chr16 chr18 chr19 chr20 chr21 chr22)
 # ---- extract genotype from vcf file ----
 for (( i = 0 ; i < ${#chrs[@]} ; i++ ))
