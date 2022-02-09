@@ -18,7 +18,7 @@ if(is.na(POP)) {
 
 
 # -- settings
-DIR <- "/media/Rome/zouxd/Projects/2021-12-05-3aQTL-STAR-Protocol-Project/output/matrix-eqtl/"
+DIR <- "/home/username/Project_XXX/matrix-eqtl/"
 CIS_DISTANCE <- 1e6
 
 # - Use linear model
