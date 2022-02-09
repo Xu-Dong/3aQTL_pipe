@@ -2,8 +2,8 @@
 
 
 # -- global settings
-plink_path=/media/Havana/wenyan/src
-in_dir=/media/Rome/zouxd/Projects/2021-12-05-3aQTL-STAR-Protocol-Project/input
+plink_path=/home/username/src
+in_dir=/home/username/Project_XXX/input
 out_dir=${in_dir}/E-GEUV-1-Genotype/plink_pca
 curr_dir=`pwd`
 
