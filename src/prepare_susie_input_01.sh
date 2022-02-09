@@ -3,13 +3,13 @@
 # Two in-house scripts: prepare_susieR_uniqGene_location.py; genotype_2_bed.py
 
 # global settings 1: Path of in-house scripts, path of matrix-eqtl results, path for susieR input
-src=${HOME}/Projects/3aQTL_Pipe/src
-base_in=/media/Rome/zouxd/Projects/2021-12-05-3aQTL-STAR-Protocol-Project/output/matrix-eqtl
-base_out=/media/Rome/zouxd/Projects/2021-12-05-3aQTL-STAR-Protocol-Project/output/susieR_analysis
+src=${HOME}/Project_XXX/src
+base_in=/home/username/Project_XXX/matrix-eqtl
+base_out=/home/username/Project_XXX/susieR_analysis
 
 # global settings 2: path of genotype data, path of data for susieR input       
-GT=${HOME}/Projects/3aQTL_Pipe/output/matrix-eqtl/input
-susie_IN=${HOME}/Projects/3aQTL_Pipe/output/susieR_analysis/input
+GT=${HOME}/Project_XXX/matrix-eqtl/input
+susie_IN=${HOME}/Project_XXX/susieR_analysis/input
 
 module load basic/anaconda2
 POPs=(CEU FIN GBR TSI YRI)
