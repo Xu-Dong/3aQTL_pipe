@@ -130,7 +130,7 @@ for(i in 1:5){
 		mat = qnorm(mat / (ncol(df_w)+1))
 		df_w[gene,] = mat
 	}
-	
+	saveRDS(cbind(rownames(mat_impute$data),df_w),file=paste0(loop.pop[i],".pdui_mat.imputed_qnorm.RDS"))
 	write.table(cbind(rownames(mat_impute$data),df_w),file=paste0(loop.pop[i],".pdui_mat.imputed_qnorm.txt",row.names=F,col.names=T,quote=F,sep="\t"))
 	
 	PEER_setPhenoMean(model, t(as.matrix(mat_impute$data)))
