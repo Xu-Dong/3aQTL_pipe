@@ -29,7 +29,7 @@ SNP_file_name = paste0(DIR,"input/","Genotype_mat.",POP,".txt")
 snps_location_file_name = paste0(DIR,"input/","snp_location.txt")
 
 # - APA expression file name
-expression_file_name = paste0(DIR,"input/","PDUI_mat.",POP,".txt")
+expression_file_name = paste0(DIR,"input/","PDUI_mat.",POP,"imputed_qnorm.txt")
 gene_location_file_name = paste0(DIR,"input/","3utr_location.txt")
 
 # - Covariates file name
