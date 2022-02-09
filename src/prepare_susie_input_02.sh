@@ -3,9 +3,9 @@
 # Usage: bash prepare_susie_input_02.sh CEU
 
 # Global settings:
-src=${HOME}/Projects/3aQTL_Pipe/src
-PDUI_DIR=${HOME}/Projects/3aQTL_Pipe/output/matrix-eqtl/input
-susie_DIR=${HOME}/Projects/3aQTL_Pipe/output/susieR_analysis
+src=${HOME}/Project_XXX/src
+PDUI_DIR=${HOME}/Project_XXX/matrix-eqtl/input
+susie_DIR=${HOME}/Project_XXX/susieR_analysis
 
 POP=$1
 
