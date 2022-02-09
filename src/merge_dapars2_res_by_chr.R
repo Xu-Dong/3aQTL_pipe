@@ -2,7 +2,7 @@
 
 # merge Dapars2 output by chromosome
 # -- global variable
-dir <- "/media/Rome/zouxd/Projects/2021-12-05-3aQTL-STAR-Protocol-Project/"
+dir <- "/home/username/Project_XXX" # change this path to user defined root path of the project
 # -- functions
 
 load_dapars2_res <- function(chromosome,new_header){
