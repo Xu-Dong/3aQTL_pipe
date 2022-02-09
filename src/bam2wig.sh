@@ -1,6 +1,6 @@
 #!/bin/bash
 # use bedtools genomecov to convert bam files into bedgraph (*.wig)
-# samples listed in a text file (each line contains one sample id) were processed one by one
+# before running this script make a text file (e.g. sample_list.txt) containing all samples (each line contains one sample id)
 # Alternative: to speed up, split samples into many small sets and processed in parallel.
 
 echo "Start ..."
