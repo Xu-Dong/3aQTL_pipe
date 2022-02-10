@@ -1,4 +1,5 @@
-# 3‘aQTL_pipe
+# Mapping 3′UTR alternative polyadenylation quantitative trait loci through population-scale transcriptomic and genomic data
+
 aQTL pipeline applied on population scale genotype and transcriptomic data
 
 
