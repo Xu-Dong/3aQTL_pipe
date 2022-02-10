@@ -6,6 +6,7 @@
 echo "Start ..."
 date
 # change bamDir to user defined location (where the downloaded bam files exist)
+# sample_list.txt contains all sample IDs (each line put one ID). The 445 sample IDs in Geuvadis RNA-seq project can be found in data/ of this repository
 bamDir=${HOME}/Project_XXX/input/E-GEUV-1-RNA
 selected_samples=${HOME}/Project_XXX/input/sample_list.txt
 
