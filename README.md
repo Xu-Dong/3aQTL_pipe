@@ -13,3 +13,18 @@ For conditions to reuse of these scripts please refer to LICENSE file.
 ## Using this pipeline
 Details on how to prepare environment and use the script can be found on [GitHub wiki](https://github.com/Xu-Dong/3aQTL_pipe/wiki) pages for this repository.
 
+## Authors
+
+Xudong Zou, Wenyan Chen, Gao Wang, Shumin Cheng, Wei Li, Lei Li
+
+Institute of Systems and Physical Biology, Shenzhen Bay Laboratory, Shenzhen 518055, China
+
+## Citation
+Code and Execution:
+[Ref TBD]
+
+The first 3'aQTL atlas of human tissues:
+**An atlas of alternative polyadenylation quantitative trait loci contributing to complex trait and disease heritability**
+Lei Li, Kai-Lieh Huang, Yipeng Gao, Ya Cui, Gao Wang, Nathan D. Elrod, Yumei Li, Yiling Elaine Chen, Ping Ji, Fanglue Peng, William K. Russell, Eric J. Wagner & Wei Li. ***Nature Genetics***,53,994-1005 **(2021)**. DOI:https://doi.org/10.1038/s41588-021-00864-5
+
+https://www.nature.com/articles/s41588-021-00864-5
