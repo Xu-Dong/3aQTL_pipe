@@ -20,11 +20,11 @@ Xudong Zou, Wenyan Chen, Gao Wang, Shumin Cheng, Wei Li, Lei Li
 Institute of Systems and Physical Biology, Shenzhen Bay Laboratory, Shenzhen 518055, China
 
 ## Citation
-Code and Execution:
+* Code and Execution:
 
 [Ref TBD]
 
-The first 3'aQTL atlas of human tissues:
+* The first 3'aQTL atlas of human tissues:
 
 **An atlas of alternative polyadenylation quantitative trait loci contributing to complex trait and disease heritability**
 
