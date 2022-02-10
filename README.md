@@ -8,7 +8,7 @@ This pipeline describes the detailed steps for analyzing dynamics alternative po
 
 The scripts in this repository were used to analyze Geuvadis RNA-seq Project dataset which contains RNA sequencing data of 445 unrelated individuals and corresponding genotype data from 1000 Genome Project. The scripts with a few edits can be reused to perform APA analysis and 3'aQTL mapping on other data source.
 
-In condition to
+For conditions to reuse of these scripts please refer to LICENSE file.
 
 ## Using this pipeline
 Details on how to prepare environment and use the script can be found on GitHub wiki pages for this repository.
