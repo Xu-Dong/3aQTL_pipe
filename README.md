@@ -11,7 +11,7 @@ The scripts in this repository were used to analyze Geuvadis RNA-seq Project dat
 For conditions to reuse of these scripts please refer to LICENSE file.
 
 ## Using this pipeline
-Details on how to prepare environment and use the script can be found on GitHub wiki pages for this repository.
+Details on how to prepare environment and use the script can be found on [GitHub wiki](https://github.com/Xu-Dong/3aQTL_pipe/wiki) pages for this repository.
 
 ## Before starting the pipeline the following data should be obtained:
 * RNA-seq alignment files in bam format (445 bam files, aligned to hg19), downloaded from Array-Express (https://www.ebi.ac.uk/arrayexpress/experiments/E-GEUV-1/)
