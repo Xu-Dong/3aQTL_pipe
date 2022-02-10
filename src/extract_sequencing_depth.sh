@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# sample_list.txt contains all sample IDs (each line put one ID). 
+# sample_list.txt contains all sample IDs (each line put one ID). The 445 sample IDs in Geuvadis RNA-seq project can be found in data/ of this repository
 sample_list="sample_list.txt"
 indir=${HOME}/Project_XXX/input
 outdir=${HOME}/Project_XXX/output
