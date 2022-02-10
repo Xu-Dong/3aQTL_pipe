@@ -21,10 +21,19 @@ Institute of Systems and Physical Biology, Shenzhen Bay Laboratory, Shenzhen 518
 
 ## Citation
 Code and Execution:
+
 [Ref TBD]
 
 The first 3'aQTL atlas of human tissues:
+
 **An atlas of alternative polyadenylation quantitative trait loci contributing to complex trait and disease heritability**
+
 Lei Li, Kai-Lieh Huang, Yipeng Gao, Ya Cui, Gao Wang, Nathan D. Elrod, Yumei Li, Yiling Elaine Chen, Ping Ji, Fanglue Peng, William K. Russell, Eric J. Wagner & Wei Li. ***Nature Genetics***,53,994-1005 **(2021)**. DOI:https://doi.org/10.1038/s41588-021-00864-5
 
 https://www.nature.com/articles/s41588-021-00864-5
+
+## Contact
+For any issues, please create a GitHub Issue.
+
+## Funding
+This work was supported by National Natural Science Foundation of China (no. 32100533) and startup funds from Shenzhen Bay Laboratory to L.L.
