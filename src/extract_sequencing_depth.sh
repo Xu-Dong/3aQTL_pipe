@@ -3,7 +3,7 @@
 # use samtools flagstat to obtain statistics of a bam file
 # use extract_read_depth.py to extract total number of mapped reads
 # a text file "sample_list.txt" contains all samples and corresponding bam files are required
-# usage: bash sample_list.txt /path/to/wig 2
+# usage: bash extract_sequencing_depth.sh sample_list.txt /path/to/wig 2
 echo "Start ..."
 date
 sampleList=$1
