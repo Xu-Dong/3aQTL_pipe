@@ -56,7 +56,7 @@ wait
 
 echo "samtools flagstat finished!"
 echo "Start extracting total aligned reads in each sample ..."
-python ${currDir}/Dapars2/3aQTL_Pipe/extract_read_depth.py --sample_list $sampleList --path_flagstat ./tmp --path_wig $wigDir --output wigFile_and_readDepth.txt &
+python ${currDir}/src/extract_read_depth.py --sample_list $sampleList --path_flagstat ./tmp --path_wig $wigDir --output wigFile_and_readDepth.txt &
 wait
 echo "Done!"
 rm ${currDir}/tmp/*
