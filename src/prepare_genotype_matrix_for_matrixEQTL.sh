@@ -7,7 +7,7 @@ VCFLIST=$1
 MAF=$2
 SAMPLES=$3
 REF=$4
-sourceDir="./Dapars2/3aQTL_Pipe"
+sourceDir="./src"
 
 # -- Basic settings
 if [ ! -d "${currDir}/tmp" ]
