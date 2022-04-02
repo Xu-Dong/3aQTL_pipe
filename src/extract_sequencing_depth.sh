@@ -7,15 +7,10 @@
 echo "Start ..."
 date
 sampleList=$1
-wigDir="./wig"
+wigDir=$2
 Threads=$3
 outFile="wigFile_and_readDepth.txt"
 currDir=`pwd`
-
-if [ ! -z "$2" ]
-then
-	wigDir=$2
-fi
 
 if [ ! -z "$4" ]
 then
