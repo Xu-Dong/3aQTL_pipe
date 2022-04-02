@@ -9,10 +9,19 @@ date
 sampleList=$1
 wigDir="./wig"
 Threads=$3
-outFile="wigFile_depth.txt"
+outFile="wigFile_and_readDepth.txt"
 currDir=`pwd`
 
-echo "wig files path: $wigDir"
+if [ ! -z "$2" ]
+then
+	wigDir=$2
+fi
+
+if [ ! -z "$4" ]
+then
+	outFile=$4
+fi
+
 if [ ! -f "${currDir}/$sampleList" ]
 then
 	echo "File $sampleList not found!"
