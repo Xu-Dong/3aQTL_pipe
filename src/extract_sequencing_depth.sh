@@ -7,8 +7,9 @@
 echo "Start ..."
 date
 sampleList=$1
-wigDir=$2
+wigDir="./wig"
 Threads=$3
+outFile="wigFile_depth.txt"
 currDir=`pwd`
 
 echo "wig files path: $wigDir"
