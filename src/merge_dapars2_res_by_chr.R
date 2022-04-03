@@ -34,6 +34,6 @@ for(chr in chrs_list$V1){
 }
 
 dim(res.df)
-write.table(res.df,file="Dapars2_res.all_chromosomes.txt"),quote=F,sep="\t",row.names=F)
+write.table(res.df,file="Dapars2_res.all_chromosomes.txt",quote=F,sep="\t",row.names=F)
 
 
