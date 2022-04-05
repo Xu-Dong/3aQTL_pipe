@@ -134,7 +134,7 @@ residuals.ds <- residuals
         #  trace='none', dendrogram='both', Rowv=TRUE, Colv=TRUE, breaks=pairs.breaks, col=colorRampPalette(myCols), scale='none', symkey=T, na.color='grey', density.info='histogram', cexRow=0.2, cexCol=0.5, main=paste0(TISSUE, '\nexpr clustering'))
 	#dev.off()
 
-covariate_file <- "./Matrix_eQTL/pdui.peer.covariates.txt")
+covariate_file <- "./Matrix_eQTL/pdui.peer.covariates.txt"
 write.table(cbind(rownames(factors), factors), file=covariate_file, row.names=FALSE, col.names=c("id",colnames(factors)), quote=FALSE, sep='\t')
 
 gz1 <- "pdui.peer.residuals.txt"
