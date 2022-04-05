@@ -7,10 +7,10 @@ library(dplyr)
 # -- load command line args
 
 # -- load PDUI matrix (imputed and normalied)
-pdui_mat <- read.table("./Matrix_eQTL/pdui_mat.imputed_qnorm.txt"),header=T,sep="\t")
+pdui_mat <- read.table("./Matrix_eQTL/pdui_mat.imputed_qnorm.txt",header=T,sep="\t")
 
 # -- load covariates
-covariate_mat <- read.table("./Matrix_eQTL/pdui.peer.covariates.txt"),header=T,sep="\t",stringsAsFactors=F)
+covariate_mat <- read.table("./Matrix_eQTL/pdui.peer.covariates.txt",header=T,sep="\t",stringsAsFactors=F)
 
 # -- reorder columns of PDUI matrix
 id_order <- colnames(pdui_mat)[-1]
