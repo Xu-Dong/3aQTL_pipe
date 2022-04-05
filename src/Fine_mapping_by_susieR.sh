@@ -27,10 +27,14 @@ PIP="0.1"
 Variance="0.2"
 L="10"
 Threads="8"
+window=""
 
-while getopts :p:L:V:t:h opt
+while getopts :w:p:L:V:t:h opt
 do
-	case $opt in 
+	case $opt in
+		w)
+			window="$OPTARG"
+		;;
 		p)
 			PIP="$OPTARG"
 		;;
@@ -152,9 +156,10 @@ function run_fine_mapping(){
 					echo "${gene} not exits!"
 					continue
 				fi
-			done &
+			done
 			wait
-		done
+		done &
+		wait
 		cd $currDir
 	fi
 
