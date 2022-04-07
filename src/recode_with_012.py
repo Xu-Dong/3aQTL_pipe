@@ -30,7 +30,7 @@ def extract_gt_from_frq(frq_file):
 
 # recode genotype to 012 code
 def recode_with_012(gt):
-    if gt == ".":
+    if "." in gt:
         return "NA"
     else:
         allele_1 = int(gt[0])
