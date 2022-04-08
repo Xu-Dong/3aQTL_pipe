@@ -159,7 +159,7 @@ function generate_gt_matrix(){
 				vcf_body=${filename%.*}
 				echo "Extract genotype from $vcf ..."
 				vcftools --vcf $vcf --out ${currDir}/tmp/${vcf_body}.gt_filtering --remove-filtered-all --keep $keep_inds --maf $maf --max-missing-count 10 --extract-FORMAT-info GT &
-				wait
+				
 				echo "Extract allele frequence from $vcf ..."
 				vcftools --vcf $vcf --out ${currDir}/tmp/${vcf_body}.gt_filtering --remove-filtered-all --keep $keep_inds --maf $maf --max-missing-count 10 --freq &
 				wait
