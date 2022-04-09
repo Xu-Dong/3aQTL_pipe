@@ -85,7 +85,7 @@ function PCA_on_genotype(){
 		wait
 
 	else
-		cd $currDir}
+		cd $currDir
 		vcf=`cat $vcfList`
 		filename=`basename $vcf .gz`
 		vcf_body=${filename%.*}
